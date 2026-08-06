@@ -1,0 +1,37 @@
+{
+  "name": "procketapi",
+  "version": "1.0.0",
+  "description": "Official Node.js client for the PRocket API — mandatory subscription, tasks and ad views for Telegram bots",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./webhook": "./src/webhook.js"
+  },
+  "files": ["src", "README.md", "LICENSE"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "grammy",
+    "telegraf",
+    "node-telegram-bot-api",
+    "monetization",
+    "procket",
+    "ads"
+  ],
+  "homepage": "https://app.procket.club",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiderMorison/procketapi-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RiderMorison/procketapi-js/issues"
+  },
+  "license": "MIT"
+}
