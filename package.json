@@ -1,6 +1,6 @@
 {
   "name": "procketapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official Node.js client for the PRocket API — mandatory subscription, tasks and ad views for Telegram bots",
   "type": "module",
   "main": "src/index.js",
@@ -13,7 +13,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test test/"
+    "test": "node --test"
   },
   "keywords": [
     "telegram",
