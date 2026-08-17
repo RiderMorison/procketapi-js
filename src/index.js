@@ -135,6 +135,13 @@ export class PRocket {
         }
         return await this.json(response);
       } catch (error) {
+        // Ошибки, которые мы сформулировали сами выше — 401, 422, 429, 5xx —
+        // при throwOnError:true вылетают из fail() и попадают сюда же, в этот
+        // catch. Без проверки они заворачивались в PRocketRequestError и шли на
+        // повтор: тип терялся (наружу никогда не выходил ни PRocketAuthError,
+        // ни PRocketRateLimitError), а отвергнутый ключ вопреки собственной
+        // докстроке ретраился три раза с нарастающей паузой.
+        if (error instanceof PRocketError) throw error;
         lastError = new PRocketRequestError(String(error?.message || error));
         if (attempt + 1 < this.retries) {
           await sleep(delay);
